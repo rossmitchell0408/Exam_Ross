@@ -14,6 +14,8 @@
 		91824BDC2E1C3E98009FF160 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 91824BDB2E1C3E98009FF160 /* Alamofire */; };
 		91824BDF2E1C4330009FF160 /* BikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91824BDE2E1C4330009FF160 /* BikeResponse.swift */; };
 		91824BE22E1C4524009FF160 /* BikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91824BE12E1C4524009FF160 /* BikeViewModel.swift */; };
+		91824BE42E1C4CCB009FF160 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91824BE32E1C4CCB009FF160 /* ListView.swift */; };
+		91824BE92E1C4EFE009FF160 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91824BE82E1C4EFE009FF160 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		91824BA52E1C26AF009FF160 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91824BDE2E1C4330009FF160 /* BikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeResponse.swift; sourceTree = "<group>"; };
 		91824BE12E1C4524009FF160 /* BikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeViewModel.swift; sourceTree = "<group>"; };
+		91824BE32E1C4CCB009FF160 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		91824BE82E1C4EFE009FF160 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +61,10 @@
 		91824B9D2E1C26AD009FF160 /* Exam_Ross */ = {
 			isa = PBXGroup;
 			children = (
+				91824BE52E1C4CE1009FF160 /* Views */,
 				91824BE02E1C4504009FF160 /* ViewModel */,
 				91824BDD2E1C430C009FF160 /* Model */,
 				91824B9E2E1C26AD009FF160 /* Exam_RossApp.swift */,
-				91824BA02E1C26AD009FF160 /* ContentView.swift */,
 				91824BA22E1C26AF009FF160 /* Assets.xcassets */,
 				91824BA42E1C26AF009FF160 /* Preview Content */,
 			);
@@ -89,6 +93,16 @@
 				91824BE12E1C4524009FF160 /* BikeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		91824BE52E1C4CE1009FF160 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91824BE32E1C4CCB009FF160 /* ListView.swift */,
+				91824BA02E1C26AD009FF160 /* ContentView.swift */,
+				91824BE82E1C4EFE009FF160 /* DetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				91824BA12E1C26AD009FF160 /* ContentView.swift in Sources */,
+				91824BE92E1C4EFE009FF160 /* DetailView.swift in Sources */,
 				91824BE22E1C4524009FF160 /* BikeViewModel.swift in Sources */,
+				91824BE42E1C4CCB009FF160 /* ListView.swift in Sources */,
 				91824BDF2E1C4330009FF160 /* BikeResponse.swift in Sources */,
 				91824B9F2E1C26AD009FF160 /* Exam_RossApp.swift in Sources */,
 			);
