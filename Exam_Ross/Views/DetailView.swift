@@ -27,6 +27,13 @@ struct DetailView: View {
                 }
             }
         }
+        .alert("\(firestoreManager.alertMessage)", isPresented: $firestoreManager.showAlert){
+            Button{
+                firestoreManager.alertMessage = ""
+            }label: {
+                Text("Dismiss")
+            }
+        }
         .onAppear{
             if bikeViewModel.bikes.isEmpty{
                 bikeViewModel.fetchBikes()

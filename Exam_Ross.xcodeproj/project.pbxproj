@@ -21,6 +21,7 @@
 		91824BF02E1C8215009FF160 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 91824BEF2E1C8215009FF160 /* FirebaseFirestoreSwift */; };
 		91824BF22E1C834D009FF160 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91824BF12E1C834C009FF160 /* GoogleService-Info.plist */; };
 		91824BF52E1C9659009FF160 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91824BF42E1C9659009FF160 /* FirestoreManager.swift */; };
+		91824BF72E1CAEF9009FF160 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91824BF62E1CAEF9009FF160 /* FavouritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		91824BE82E1C4EFE009FF160 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		91824BF12E1C834C009FF160 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91824BF42E1C9659009FF160 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		91824BF62E1CAEF9009FF160 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				91824BE32E1C4CCB009FF160 /* ListView.swift */,
 				91824BA02E1C26AD009FF160 /* ContentView.swift */,
 				91824BE82E1C4EFE009FF160 /* DetailView.swift */,
+				91824BF62E1CAEF9009FF160 /* FavouritesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				91824BA12E1C26AD009FF160 /* ContentView.swift in Sources */,
 				91824BF52E1C9659009FF160 /* FirestoreManager.swift in Sources */,
+				91824BF72E1CAEF9009FF160 /* FavouritesView.swift in Sources */,
 				91824BE92E1C4EFE009FF160 /* DetailView.swift in Sources */,
 				91824BE22E1C4524009FF160 /* BikeViewModel.swift in Sources */,
 				91824BE42E1C4CCB009FF160 /* ListView.swift in Sources */,

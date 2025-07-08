@@ -10,6 +10,8 @@ import FirebaseFirestore
 
 class FirestoreManager: ObservableObject{
     @Published var favBikes = [Bike]()
+    @Published var alertMessage = ""
+    @Published var showAlert = false
     
     private let COLLECTION_BIKEDB: String = "FavouriteBikes"
     //private let COLLECTION_BIKES: String = "FavBikes"
@@ -35,6 +37,12 @@ class FirestoreManager: ObservableObject{
                 .collection(COLLECTION_BIKEDB)
                 .document(newBike.id)
                 .setData(from: newBike)
+            
+            DispatchQueue.main.async {
+                self.alertMessage = "Successfully added to favourites"
+                self.showAlert = true
+            }
+
         } catch let err as NSError {
             print("Error adding document: \(err)")
         }
