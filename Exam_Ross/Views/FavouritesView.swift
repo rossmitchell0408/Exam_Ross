@@ -58,7 +58,6 @@ struct FavouritesView: View {
         }
         .padding()
         .onAppear{
-            //self.bikeViewModel.fetchBikes()
             Task{
                 if firestoreManager.favBikes.isEmpty{
                     await firestoreManager.getAllFavBikes()
