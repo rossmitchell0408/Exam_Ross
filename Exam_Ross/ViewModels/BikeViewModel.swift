@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//import Alamofire
 
 class BikeViewModel: ObservableObject {
     @Published var bikes: [Bike] = []
