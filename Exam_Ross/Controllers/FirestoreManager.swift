@@ -14,7 +14,6 @@ class FirestoreManager: ObservableObject{
     @Published var showAlert = false
     
     private let COLLECTION_BIKEDB: String = "FavouriteBikes"
-    //private let COLLECTION_BIKES: String = "FavBikes"
     
     private let db: Firestore
     
@@ -73,7 +72,6 @@ class FirestoreManager: ObservableObject{
         } catch {
             print("Error getting documents: \(error)")
         }
-        
     }
     
     func deleteFavBike(bikeToDelete: Bike) async {

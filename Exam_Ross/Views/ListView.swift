@@ -14,7 +14,7 @@ struct ListView: View {
         NavigationView {
             List(self.bikeViewModel.bikes) { bike in
                 NavigationLink(destination: DetailView(bikeId: bike.id)) {
-                    Text("City: \(bike.location.city)")
+                    Text("\(bike.location.city)")
                 }
                 .environmentObject(bikeViewModel)
                 .environmentObject(firestoreManager)

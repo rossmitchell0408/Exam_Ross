@@ -25,21 +25,23 @@ struct FavouritesView: View {
                         }label: {
                             Image(systemName: "heart.fill")
                                 .foregroundStyle(.red)
+                                .font(.title)
                         }
                         .buttonStyle(.borderless)
                         Spacer()
                         NavigationLink(destination: DetailView(bikeId: bike.id)){
                             VStack{
-                                Text("City: \(bike.location.city)")
+                                Text("\(bike.location.city)")
                                     .fontWeight(.bold)
                                 if let companies = bike.company{
+                                    Text("Companies:")
                                     ForEach(companies, id: \.self){company in
-                                        Text("Company: \(company)")
+                                        Text("\(company)")
                                     }
-                                    
                                 }
                             }
-                            
+                            .frame(maxWidth: .infinity)
+                            .multilineTextAlignment(.center)
                         }
 
                     }
@@ -50,7 +52,6 @@ struct FavouritesView: View {
                     for index in indexSet {
                         showDeleteAlert = true
                         bikeToDelete = firestoreManager.favBikes[index]
-                        //plantToDelete = indoorPlants[index]
                     }
                 })
             }

@@ -6,27 +6,54 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct DetailView: View {
     @EnvironmentObject var bikeViewModel : BikeViewModel
     @EnvironmentObject var firestoreManager: FirestoreManager
     let bikeId : String
-    @State var bike : Bike? = nil
-    @State var isFav : Bool = false
+    @State private var bike : Bike? = nil
+    @State private var isFav : Bool = false
+    @State private var region = MKCoordinateRegion()
     
     var body: some View {
         VStack{
             if bike != nil {
-                Text("Bike: \(bike!.name)")
-                Text("City: \(bike!.location.city)")
-                Text("Country: \(bike!.location.country)")
+                Text("\(bike!.name)")
+                    .font(.title)
+                    
+                Map(coordinateRegion: $region, annotationItems: [bike!]) { bike in
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: bike.location.latitude, longitude: bike.location.longitude)){
+                        VStack{
+                            Text(bike.location.city)
+                                .font(.caption)
+                                .padding(4)
+                                .background(Color.white)
+                            Image(systemName: "mappin.circle.fill")
+                                .foregroundColor(.red)
+                        }
+                    }
+                }
+                .frame(height: 300)
+                Text("Location: \(bike!.location.city), \(bike!.location.country)")
+                    .font(.title2)
+                if let companies = bike!.company{
+                    Text("Companies:")
+                    ForEach(companies, id: \.self){company in
+                        Text("\(company)")
+                    }
+                }
+                Spacer()
                 Button{
                     toggleFavourite()
                 }label: {
                     Image(systemName: isFav == true ? "heart.fill" : "heart")
+                        .font(.title)
+                        .foregroundStyle(.red)
                 }
             }
         }
+        .padding()
         .alert("\(firestoreManager.alertMessage)", isPresented: $firestoreManager.showAlert){
             Button{
                 firestoreManager.alertMessage = ""
@@ -45,7 +72,10 @@ struct DetailView: View {
                 }
                 checkIsFav()
             }
-            
+            region = MKCoordinateRegion(
+                    center: CLLocationCoordinate2D(latitude: bike!.location.latitude, longitude: bike!.location.longitude),
+                    span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                )
         }
     }
     
@@ -77,3 +107,7 @@ struct DetailView: View {
         }
     }
 }
+
+
+
+

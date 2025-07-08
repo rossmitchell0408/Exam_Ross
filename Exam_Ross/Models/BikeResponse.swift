@@ -15,11 +15,7 @@ struct Bike: Identifiable, Codable {
     let id: String
     let name: String
     let location: Location
-    //let href: String?
     let company: [String]?
-    //let gbfsHref: String?
-    //let system: String?
-    //let source: String?
     let ebikes: Bool?
 }
 
