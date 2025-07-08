@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var bikeViewModel = BikeViewModel()
+    @StateObject var firestoreManager = FirestoreManager.getInstance()
     var body: some View {
         ListView()
             .environmentObject(bikeViewModel)
+            .environmentObject(firestoreManager)
 //        VStack {
 //            List(self.bikeViewModel.bikes) { bike in
 //                Text("Bike: \(bike.name)")

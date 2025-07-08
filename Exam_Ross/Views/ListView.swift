@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ListView: View {
     @EnvironmentObject var bikeViewModel : BikeViewModel
+    @EnvironmentObject var firestoreManager: FirestoreManager
     var body: some View {
         NavigationView {
             List(self.bikeViewModel.bikes) { bike in
@@ -16,6 +17,7 @@ struct ListView: View {
                     Text("City: \(bike.location.city)")
                 }
                 .environmentObject(bikeViewModel)
+                .environmentObject(firestoreManager)
             }
         }
         .padding()
